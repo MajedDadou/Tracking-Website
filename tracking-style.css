@@ -1,81 +1,152 @@
 body {
-  font-family: 'Playfair Display', serif;
-  background-color: #E2E2E2; /* Light grey background */
-  margin: 0;
-  padding: 0;
+    font-family: 'Playfair Display', serif;
+    background-color: #E2E2E2;
+    /* Light grey background */
+    margin: 0;
+    padding: 0;
 }
 
+/* navbar */
 nav {
-  background-color: #889C74; /* Dark olive */
-  padding: 20px 0;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
-  display: flex; /* Use flexbox */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
+    background-color: #889C74;
+    /* Dark olive */
+    padding: 20px 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    /* Adding a subtle shadow */
+    display: flex;
+    /* Use flexbox */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  display: flex; /* Use flexbox */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    /* Use flexbox */
 }
 
 li {
-  margin: 0 15px;
+    margin: 0 15px;
 }
 
 li a {
-  color: #000000; /* Black */
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px; /* Adding rounded corners */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    color: #000000;
+    /* Black */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* Adding rounded corners */
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transitions */
 }
 
 li a:hover {
-  background-color: #A9BA9F; /* Light olive on hover */
-  color: #000000; /* Black on hover */
+    background-color: #A9BA9F;
+    /* Light olive on hover */
+    color: #000000;
+    /* Black on hover */
 }
 
 .burger-menu {
-  display: none; /* Initially hide burger menu icon */
+    display: none;
+    /* Initially hide burger menu icon */
 }
 
 .burger-menu-icon {
-  width: 30px;
-  height: 3px;
-  background-color: #000;
-  margin: 5px 0;
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
 }
 
 @media only screen and (max-width: 768px) {
-  ul {
-    display: none; /* Hide the regular navbar */
-    position: fixed;
-    top: 70px;
+    ul {
+        display: none;
+        /* Hide the regular navbar */
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #4C4A33;
+        /* Dark olive */
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center items horizontally */
+    }
+
+    li {
+        display: block;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    li a {
+        display: block;
+        padding: 10px;
+    }
+
+    .burger-menu {
+        display: block;
+        /* Show burger menu icon */
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+}
+
+.first-sec {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 95vh;
+    /* background-color: #889C74; */
+    position: relative; /* Add position relative for absolute positioning */
+    overflow: hidden; /* Ensure SVG stays within container */
+}
+
+.first-sec::before {
+    content: "";
+    position: absolute;
+    top: 0;
     left: 0;
     width: 100%;
-    background-color: #4C4A33; /* Dark olive */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-  }
-  li {
-    display: block;
+    height: 100%;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100%" height="95vh" viewBox="0 0 1508 970" fill="none"%3E%3Cpath d="M195 746.5L0 970H1508V0.5L1375 151.5L1080.5 273.5L964 508L769.5 573.5L438.5 597L195 746.5Z" fill="%23889C74"/%3E%3C/svg%3E');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+.first-sec svg {
+    z-index: -10; /* Adjust z-index to position it behind other elements */
+}
+
+.title {
+    font-size: 12rem;
+    font-weight: 800;
+}
+
+.title-text {
     text-align: center;
-    margin: 15px 0;
-  }
-  li a {
-    display: block;
-    padding: 10px;
-  }
-  .burger-menu {
-    display: block; /* Show burger menu icon */
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 9999;
-  }
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    color: #EFE9DD;
+    font-size: 1.575rem;
+}
+
+.text {
+    margin-top: 100px;
+    width: 70%;
 }
